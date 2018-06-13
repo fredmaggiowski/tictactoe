@@ -1,0 +1,9 @@
+#game-tools {
+  margin-top: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+  height: 50px;
+}

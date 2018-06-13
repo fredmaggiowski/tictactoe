@@ -1,0 +1,17 @@
+#score-board {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+#score-board > div {
+  display: flex;
+}
+
+#score-board .player .score {
+  color: red;
+}
