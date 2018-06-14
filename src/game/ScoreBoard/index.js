@@ -33,7 +33,7 @@ class ScoreBoard extends React.Component {
   render() {
     let currentScore = this.props.score;
     return (
-      <div id="score-board" className="elevate rounded">
+      <div id="score-board" className="elevate">
           <PlayerScore
             score={currentScore.x}
             player="x"/>

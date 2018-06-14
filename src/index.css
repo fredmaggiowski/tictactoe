@@ -1,5 +1,14 @@
 body {
-  background-color: #6FCF97;
+  --primary-bold: #f57c00;
+  --primary-color: #fcce7e;
+  --secondary-color: #B00020;
+  --error-color: #B00020;
+  --grid-color: #000;
+  --panel-background: #fff;
+}
+
+body {
+  background-color: var(--primary-bold);
 }
 
 .elevate {
@@ -9,9 +18,3 @@ body {
 .rounded {
   border-radius: 5px;
 }
-
-/* .flex-center {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-} */

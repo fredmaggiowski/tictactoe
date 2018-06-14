@@ -1,7 +1,3 @@
-#game-grid {
-  --grid-color: red;
-}
-
 .grid-row:after {
   clear: both;
   content: "";
@@ -11,31 +7,31 @@
 /* Setup grid colouring */
 
 .grid-row .square:first-child, .grid-row .square:nth-child(2) {
-  border-right: 2px solid var(--grid-color);
+  border-right: 1px solid var(--grid-color);
 }
 
 .grid-row .square:nth-child(2), .grid-row .square:last-child {
-  border-left: 2px solid var(--grid-color);
+  border-left: 1px solid var(--grid-color);
 }
 
 .grid-row .square:first-child, .grid-row .square:nth-child(2) {
-  border-right: 2px solid var(--grid-color);
+  border-right: 1px solid var(--grid-color);
 }
 
 .grid-row:first-child .square {
-  border-bottom: 2px solid var(--grid-color);
+  border-bottom: 1px solid var(--grid-color);
 }
 
 .grid-row:nth-child(2) .square {
-  border-top: 2px solid var(--grid-color);
-  border-bottom: 2px solid var(--grid-color);
+  border-top: 1px solid var(--grid-color);
+  border-bottom: 1px solid var(--grid-color);
 }
 
 .grid-row:last-child .square {
-  border-top: 2px solid var(--grid-color);
+  border-top: 1px solid var(--grid-color);
 }
 
-/* Round grid corners */
+/* Round grid corners *
 
 .grid-row:first-child .square:first-child {
   border-top-left-radius: 5px;
@@ -52,3 +48,4 @@
 .grid-row:last-child .square:last-child {
   border-bottom-right-radius: 5px;
 }
+*/
