@@ -85,12 +85,12 @@ class Game extends React.Component {
           winner={this.state.winner}
           score={this.state.score} 
           turn={this.state.xIsNext?'x':'o'} />
+          <Tools
+            onReset={() => this.reset()}
+            onNewMatch={() => this.newMatch()} />
         <Grid
           squares={this.state.gameset}
           onClick={i => this.selected(i)} />
-        <Tools
-          onReset={() => this.reset()}
-          onNewMatch={() => this.newMatch()} />
         <EndMatchDialog 
           open={this.state.winner !== null || this.state.draw} 
           winner={this.state.winner} 
