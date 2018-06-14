@@ -6,8 +6,8 @@ class Tools extends React.Component {
   render () {
     return (
       <div id="game-tools" className="elevate">
-        <button onClick={this.props.onNewMatch}>NEW GAME</button>
-        <button onClick={this.props.onReset}>RESET BOARD</button>
+        <button className="rounded elevate" onClick={this.props.onNewMatch}>NEW MATCH</button>
+        <button className="rounded elevate" onClick={this.props.onReset}>RESET BOARD</button>
       </div>
     )
   }

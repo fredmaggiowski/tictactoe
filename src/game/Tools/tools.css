@@ -8,3 +8,17 @@
   align-items: center;
   justify-content: space-around;
 }
+
+#game-tools button {
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+#game-tools button:focus {
+  outline: none;
+}
+
+#game-tools button:active {
+  box-shadow: 1px 1px 1px #ddd !important;
+}

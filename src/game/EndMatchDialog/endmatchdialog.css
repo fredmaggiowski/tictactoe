@@ -1,0 +1,19 @@
+#end-match-dialog-title {
+    text-align: center;
+}
+
+#end-match-dialog-title div {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#end-match-dialog-title div svg {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+#end-matching-dialog-button-wrapper {
+    display: flex;
+    justify-content: center;
+}

@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { Grid } from './Grid/'
-import { ScoreBoard } from './ScoreBoard/'
-import { Tools } from './Tools/'
+import { EndMatchDialog } from './EndMatchDialog';
+import { Grid } from './Grid'
+import { ScoreBoard } from './ScoreBoard'
+import { Tools } from './Tools'
 
 import './game.css'
 
@@ -11,6 +12,7 @@ const getInitialState = () => {
     gameset: Array(9).fill(null),
     xIsNext: true,
     winner: null,
+    draw: false,
     score: {
       x: 0,
       o: 0,
@@ -31,7 +33,6 @@ class Game extends React.Component {
   newMatch() {
     let matchState = getInitialState();
     matchState.score = this.state.score;
-    console.log(matchState)
     this.setState(matchState);
   }
 
@@ -41,11 +42,13 @@ class Game extends React.Component {
       return; // This cell has already been populated or the game has ended.
     }
 
+    // Update next in turn.
     currentGame[i] = this.state.xIsNext ? "x": "o";
     this.setState({
       gameset: currentGame,
     });
 
+    // Verify if there's a winner.
     let winner = this.getWinner();
     if (winner !== null) {
       // Update score before setting new state.
@@ -57,34 +60,47 @@ class Game extends React.Component {
       });
       return;
     }
+
+    // Verify is the match is a draw.
+    let draw = this.isDraw()
+    if (draw) {
+      this.setState({
+        draw: true,
+        score: this.state.score,
+      });
+      return;
+    }
+
+    // Update gameset, turn an continue playing!
     this.setState({
       gameset: this.state.gameset,
       xIsNext: !this.state.xIsNext,
     })
-    console.log('Selected updates gameset', this.state.gameset);
   }
 
   render() {
-    if (this.state.winner !== null) {
-      console.log('We\'ve got a winner: ', this.state.winner);
-    }
     return (
       <div id="game">
         <ScoreBoard
           winner={this.state.winner}
-          score={this.state.score} />
+          score={this.state.score} 
+          turn={this.state.xIsNext?'x':'o'} />
         <Grid
           squares={this.state.gameset}
           onClick={i => this.selected(i)} />
         <Tools
           onReset={() => this.reset()}
           onNewMatch={() => this.newMatch()} />
+        <EndMatchDialog 
+          open={this.state.winner !== null || this.state.draw} 
+          winner={this.state.winner} 
+          draw={this.state.draw}
+          onClose={(choice) => this.dialogClosed(choice) } />
       </div>
     );
   }
 
   getWinner() {
-    console.log('Getting a winner');
     const winningCombinations = [
       [0, 1, 2],
       [3, 4, 5],
@@ -100,11 +116,27 @@ class Game extends React.Component {
       if (this.state.gameset[a] !== null &&
           this.state.gameset[a] === this.state.gameset[b] && 
           this.state.gameset[b] === this.state.gameset[c]) {
-        console.log('Found a winner: ', this.state.gameset[a]);
         return this.state.gameset[a];
       }
     }
     return null;
+  };
+
+  isDraw() {
+    let filtered = this.state.gameset.filter((square) => (square === null));
+    return (filtered.length === 0);
+  };
+
+  dialogClosed(choice) {
+    switch (choice) {
+      case 'reset':
+        this.reset();
+        return;
+      case 'newmatch':
+      default:
+        this.newMatch()
+        return;
+    }
   };
 }
 

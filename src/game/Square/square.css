@@ -1,16 +1,15 @@
 .square {
   background-color: var(--panel-background);
-  /* border: 1px solid #999; */
   border: none;
   float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 100px;
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   padding: 0;
-  padding-top: 5px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
 }
 

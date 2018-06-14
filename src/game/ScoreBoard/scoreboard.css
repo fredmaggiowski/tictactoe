@@ -1,7 +1,7 @@
 #score-board {
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 10px;
-  width: 300px;
+  width: 720px;
   height: 50px;
   background-color: var(--panel-background);
   display: flex;
@@ -15,14 +15,29 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #score-board .player .score {
-  color: var(--secondary-color);
+  color: var(--grid-color);
   border-bottom: 1px solid;
   width: 80px;
   margin-left: 10px;
   text-align: right;
   font-size: 21px;
   font-weight: 100;
+}
+
+/* Player turn color animation */
+#score-board .player.turn {
+  animation: 2s backgroundblink infinite alternate;
+}
+
+@keyframes backgroundblink {
+  to {
+    background-color: var(--player-turn-color);;
+  }
 }
