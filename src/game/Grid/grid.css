@@ -30,22 +30,3 @@
 .grid-row:last-child .square {
   border-top: 1px solid var(--grid-color);
 }
-
-/* Round grid corners *
-
-.grid-row:first-child .square:first-child {
-  border-top-left-radius: 5px;
-}
-
-.grid-row:first-child .square:last-child {
-  border-top-right-radius: 5px;
-}
-
-.grid-row:last-child .square:first-child {
-  border-bottom-left-radius: 5px;
-}
-
-.grid-row:last-child .square:last-child {
-  border-bottom-right-radius: 5px;
-}
-*/
