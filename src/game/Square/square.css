@@ -16,3 +16,23 @@
 .square:focus {
   outline: none;
 }
+
+@media (max-width: 620px) {
+  .square {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .square {
+    height: 100px;
+    width: 100px;
+  }
+
+  .square svg {
+    width: 80%;
+    height: 80%;
+    /* padding-top: 0px; */
+  }
+}

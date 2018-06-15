@@ -44,7 +44,7 @@ class ScoreBoard extends React.Component {
             score={currentScore.x}
             turn={playerTurn}
             player="x"/>
-          <div>Tic Tac Toe</div>
+          <div id="game-name">Tic Tac Toe</div>
           <PlayerScore
             score={currentScore.o}
             turn={playerTurn}
