@@ -17,6 +17,14 @@
   outline: none;
 }
 
+svg.o-sign circle {
+  stroke: var(--o-color);
+}
+
+svg.x-sign line, svg.x-sign path {
+  stroke: var(--x-color);
+}
+
 @media (max-width: 620px) {
   .square {
     height: 150px;
@@ -33,6 +41,5 @@
   .square svg {
     width: 80%;
     height: 80%;
-    /* padding-top: 0px; */
   }
 }

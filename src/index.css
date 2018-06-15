@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
 body {
-  --primary-bold: #90caf9; /* #f57c00;*/
+  --primary-bold: #B00020; /* #f57c00; #90caf9 */
   --primary-color: #fcce7e;
   --secondary-color: #B00020;
   --error-color: #B00020;
   --grid-color: #000;
   --panel-background: #fff;
-  --player-turn-color: #b3e5fc;
+  --player-turn-color: #e4b3fc; /* #fcb3b3; */
+  --o-color: #00d0ff;
+  --x-color: #0e00ff;
   font-family: 'Montserrat'
 }
 
