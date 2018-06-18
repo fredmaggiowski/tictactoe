@@ -85,7 +85,7 @@ class Game extends React.Component {
           winner={this.state.winner}
           score={this.state.score} 
           turn={this.state.xIsNext?'x':'o'} />
-          <Tools
+        <Tools
             onReset={() => this.reset()}
             onNewMatch={() => this.newMatch()} />
         <Grid

@@ -3,3 +3,22 @@
   flex-direction: column;
   align-items: center;
 }
+
+#game #game-tools, #game #score-board, #game #game-grid {
+  animation: fadeIn 1s ease-in both;
+}
+
+#game #game-grid {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}

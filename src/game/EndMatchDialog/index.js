@@ -28,7 +28,7 @@ class EndMatchDialog extends React.Component {
       let player = this.selectWinner(this.props.winner);
       title = <div>PLAYER {player} WON</div>;
     } else if (this.props.draw) {
-      title = 'GAME IS A DRAW!';
+      title = 'DRAW!';
     }
 
     return (
